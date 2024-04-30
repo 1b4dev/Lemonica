@@ -3,23 +3,25 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import Reservation from './reservation';
 
 describe('Reservation Component', () => {
-  it('should render the modal correctly', () => {
-    const { getByText } = render(<Reservation show={true} handleClose={() => {}} handleShow={() => {}} />);
-    expect(getByText('Make Reservation')).toBeInTheDocument();
-  });
+    it('should render the modal correctly', () => {
+        const { getByText, getByRole, queryByRole } = render(<Reservation show={true} handleClose={() => {}} handleShow={() => {}} />);
+        expect(getByText('Make Reservation')).toBeInTheDocument();
+        expect(queryByRole('button', { name: 'Make Reservation' })).toBeInTheDocument();
+        expect(queryByRole('button', { name: 'Close' })).toBeInTheDocument();
+      });
 
   it('should validate the form correctly', async () => {
     const { getByLabelText, getByText, getByRole } = render(<Reservation show={true} handleClose={() => {}} handleShow={() => {}} />);
-
+  
     fireEvent.change(getByLabelText('Name'), { target: { value: '' } });
     fireEvent.change(getByLabelText('Email Address'), { target: { value: 'invalid-email' } });
     fireEvent.change(getByLabelText('Phone Number'), { target: { value: 'invalid-phone' } });
     fireEvent.change(getByLabelText('Number of People'), { target: { value: '0' } });
     fireEvent.change(getByLabelText('Select Date'), { target: { value: '' } });
     fireEvent.change(getByLabelText('Select Time'), { target: { value: '' } });
-
+  
     fireEvent.click(getByRole('button', { name: /Make Reservation/ }));
-
+  
     await waitFor(() => {
       expect(getByText('Your name is required')).toBeInTheDocument();
       expect(getByText('Invalid email address')).toBeInTheDocument();

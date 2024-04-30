@@ -20,7 +20,7 @@ const Reservation = ({ show, handleClose, handleShow }) => {
   return (
     <Modal show={show} onHide={handleClose} backdrop="static" centered>
       <Modal.Header closeButton>
-        <Modal.Title>Make Reservation</Modal.Title>
+        <Modal.Title>Make a Reservation</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Formik
@@ -41,33 +41,33 @@ const Reservation = ({ show, handleClose, handleShow }) => {
           {({ handleSubmit, errors, touched }) => (
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Field type="text" className={`form-control ${touched.name && errors.name ? 'is-invalid' : ''}`}name="name"/>
+              <Form.Label htmlFor="name">Name</Form.Label>
+                <Field type="text" className={`form-control ${touched.name && errors.name ? 'is-invalid' : ''}`} id="name" name="name" />
                 <ErrorMessage name="name" component="div" className="invalid-feedback" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email Address</Form.Label>
-                <Field type="email" className={`form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}name="email"/>
+                <Form.Label htmlFor="email">Email Address</Form.Label>
+                <Field type="email" className={`form-control ${touched.email && errors.email ? 'is-invalid' : ''}`} id="email" name="email" />
                 <ErrorMessage name="email" component="div" className="invalid-feedback" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formPhone">
-                <Form.Label>Phone Number</Form.Label>
-                <Field type="tel" className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`}name="phone"/>
+                <Form.Label htmlFor="phone">Phone Number</Form.Label>
+                <Field type="tel" className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`} id="phone" name="phone" />
                 <ErrorMessage name="phone" component="div" className="invalid-feedback" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formNumPeople">
-                <Form.Label>Number of People</Form.Label>
-                <Field type="number" min="1" className={`form-control ${touched.numPeople && errors.numPeople ? 'is-invalid' : ''}`} name="numPeople"/>
+              <Form.Label htmlFor="numPeople">Number of People</Form.Label>
+                <Field type="number" min="1" className={`form-control ${touched.numPeople && errors.numPeople ? 'is-invalid' : ''}`} id="numPeople" name="numPeople" />
                 <ErrorMessage name="numPeople" component="div" className="invalid-feedback" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formDate">
-                <Form.Label>Select Date</Form.Label>
-                <Field type="date" className={`form-control ${touched.date && errors.date ? 'is-invalid' : ''}`} name="date"/>
+              <Form.Label htmlFor="date">Select Date</Form.Label>
+                <Field type="date" className={`form-control ${touched.date && errors.date ? 'is-invalid' : ''}`} id="date" name="date" />
                 <ErrorMessage name="date" component="div" className="invalid-feedback" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formTime">
-                <Form.Label>Select Time</Form.Label>
-                <Field type="time" className={`form-control ${touched.time && errors.time ? 'is-invalid' : ''}`} name="time"/>
+                <Form.Label htmlFor="time">Select Time</Form.Label>
+                <Field type="time" className={`form-control ${touched.time && errors.time ? 'is-invalid' : ''}`} id="time" name="time" />
                 <ErrorMessage name="time" component="div" className="invalid-feedback" />
               </Form.Group>
               <Button variant="warning" className="rounded-pill" type="submit">Make Reservation</Button>
