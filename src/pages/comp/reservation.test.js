@@ -5,10 +5,10 @@ import Reservation from './reservation';
 describe('Reservation Component', () => {
     it('should render the modal correctly', () => {
         const { getByText, getByRole, queryByRole } = render(<Reservation show={true} handleClose={() => {}} handleShow={() => {}} />);
-        expect(getByText('Make Reservation')).toBeInTheDocument();
+        expect(getByText('Make a Reservation')).toBeInTheDocument();
         expect(queryByRole('button', { name: 'Make Reservation' })).toBeInTheDocument();
         expect(queryByRole('button', { name: 'Close' })).toBeInTheDocument();
-      });
+    });
 
   it('should validate the form correctly', async () => {
     const { getByLabelText, getByText, getByRole } = render(<Reservation show={true} handleClose={() => {}} handleShow={() => {}} />);
