@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "name": "Greek Salad",
+      "desc": "letuos, poppers, olecs ane durchier",
+      "price":  12.99,
+      "category": "starter",
+      "image": "salata.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bruschetta",
+      "desc": "I don't know what is this just order",
+      "price": 16.99,
+      "category": "starter",
+      "image": "brus.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Penne Pasta",
+      "desc": "Pasta with garlic tomato sauce and basil.",
+      "price": 11.99,
+      "category": "main",
+      "image": "penne.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Lemon Dessert",
+      "desc": "Sour and creamy, dreamlike taste. Refresh with lemon.",
+      "price": 8.50,
+      "category": "dessert",
+      "image": "lemon.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Whole Wheat Bread",
+      "desc": "Standart bread for your meal.",
+      "price": 4.25,
+      "category": "other",
+      "image": "bread.jpg"
+    }
+  ]
